@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
-const UserSchema = mongoose.Schema({
+
+const userSchema = new mongoose.Schema({
     name: {
         type:String,
         required: true,
@@ -10,8 +11,7 @@ const UserSchema = mongoose.Schema({
     },
     phone_no: {
         type: Number,
-        min:10,
-        max:10
+        min:10
     },
     email: {
         type: String,
@@ -21,6 +21,10 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true,
         minLength: 6,
-        maxLength: 50
+        maxLength: 500
     }
 })
+
+const userModel = mongoose.model("Users", userSchema)
+
+module.exports = {userModel}

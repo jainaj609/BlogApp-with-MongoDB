@@ -12,7 +12,7 @@ const verification = (req, res, next) => {
         jwt.verify(token, secretkey);
         next();
     } catch (error) {
-        return res.send({ msg: "Token is not valid" })
+        return res.send({ msg: "Token expired" })
     }
 }
 module.exports = verification;
