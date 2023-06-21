@@ -17,7 +17,7 @@ app.use(route);
 
 
 app.get('/', (req,res)=>{
-    res.send("<h1>API is running fine</h1>")
+    res.send(`<h1>API is ${process.env.STATUS}</h1>`)
 })
 
 app.listen(5500, async()=>{
