@@ -1,9 +1,14 @@
 const express = require('express');
 const route = require('./routes/route');
 const cors = require('cors')
-const app = express();
 const bodyparser = require('body-parser');
 const { connectDB } = require('./database/config');
+const dotenv = require('dotenv')
+
+dotenv.config()
+const app = express();
+
+
 app.use(bodyparser.json());
 app.use(cors({
     origin:"*"
