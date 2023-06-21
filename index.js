@@ -13,7 +13,7 @@ app.use(bodyparser.json());
 app.use(cors({
     origin:"*"
 }));
-app.use('/app/category', route);
+app.use(route);
 
 
 app.get('/', (req,res)=>{
